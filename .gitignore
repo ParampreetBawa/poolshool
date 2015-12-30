@@ -1,0 +1,58 @@
+# .gitignore for Grails
+
+# IDE support files
+/.classpath
+/.launch
+/.project
+/.settings
+/*.launch
+/*.tmproj
+/ivy*
+/eclipse
+/out
+
+# default HSQL database files for production mode
+/prodDb.*
+
+# general HSQL database files
+*Db.properties
+*Db.script
+
+# logs
+/stacktrace.log
+/test/reports
+/logs
+
+# project release file
+/*.war
+
+# plugin release file
+/*.zip
+
+# older plugin install locations
+/plugins
+/web-app/plugins
+/web-app/WEB-INF/classes
+
+# "temporary" build files
+/target
+
+# other
+*.iws
+*.iml
+.idea
+cobertura.ser
+
+.DS_Store
+
+*.rdb
+
+src/java/*-local-config.groovy
+
+#following is added - just to avoid src/java for the configuration purpose.
+*-local-config.groovy
+src/java/local-config.properties
+
+# customized startup script including specifi jvm opts
+run_app2.sh
+
