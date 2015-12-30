@@ -1,0 +1,145 @@
+@font-face {
+    font-family: 'gotham light';
+    src: url('/fonts/Gotham-Light.otf');
+}
+
+@font-face {
+    font-family: 'gotham book';
+    src: url('/fonts/Gotham-Book.otf');
+}
+
+@font-face {
+    font-family: 'gotham thin';
+    src: url('/fonts/Gotham-Thin.otf');
+}
+
+@font-face {
+    font-family: 'gotham bold';
+    src: url('/fonts/Gotham-Bold.otf');
+}
+@font-face {
+    font-family: 'gotham black';
+    src: url('/fonts/Gotham-Black.otf');
+}
+@font-face {
+    font-family: 'gotham medium';
+    src: url('/fonts/Gotham-Medium.otf');
+}
+a:hover {
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    color: grey;
+    font-family: 'gotham book';
+    font-size: 14px;
+}
+.navbar {
+    height: 43px;
+    background-color: #fff;
+    border-bottom: 1px solid red;
+    padding-bottom: 0;
+}
+.ps-logo {
+    text-align: center;
+    vertical-align: middle;
+    display: table;
+    line-height: 40px;
+}
+.count-teller {
+    position: absolute;
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    background-color: #B92B27;
+    top: 0px;
+    right: 2px;
+    color: #fff;
+    line-height: 20px;
+    font-size: 11px;
+}
+.left-nav {
+    margin-left: 34px;
+}
+.separator {
+    margin-top: 10px;
+    margin-bottom: 6px;
+}
+.heading {
+    color: grey;
+    font-size: 16px;
+}
+.search-content {
+    margin-top:5px;
+    width: 500px;
+    border-radius: 6px;
+    height: 36px;
+    background-color: #F4F4F4;
+    padding-left: 10px;
+    text-align: left;
+    vertical-align: middle;
+    line-height: 36px;
+    outline: none;
+    color: #303030;
+}
+.content {
+    margin-top: 25px;
+}
+.trending {
+    margin-top: 5px;
+}
+.main-feed ul{
+    list-style-type: none;
+}
+.main-feed .heading {
+    font-family: 'gotham book';
+    font-size: 20px;
+    color: #000;
+}
+
+.main-feed .description {
+    font-family: 'gotham light';
+    color: #000;
+}
+.trending ul {
+    padding-left: 17px;
+}
+.trending li {
+    color:grey;
+    padding-bottom: 10px;
+}
+.glyphicon-thumbs-down {
+    padding-left: 10px;
+}
+.views-count {
+    font-size: 12px;
+}
+.author {
+    color: #000;
+}
+.add-comment {
+    color: grey;
+    font-size: 13px;
+    font-family: 'gotham book';
+    text-decoration: none;
+}
+#add-comment {
+    border: 1px solid grey;
+    margin-right: 75px;
+    margin-left: 22px;
+    height: 40px;
+    padding: 5px;
+}
+.add-comment-box {
+    width: 100%;
+    border: 1px solid lightgrey;
+    height: 100%;
+    border-radius: 4px;
+    outline: none;
+    padding-left: 5px;
+}
+
+.stories-heading {
+
+}
