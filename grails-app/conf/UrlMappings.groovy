@@ -6,6 +6,11 @@ class UrlMappings {
                 // apply constraints here
             }
         }
+        "/user/register"{
+            parse = true
+            controller = 'user'
+            action = [POST:"register"]
+        }
 
         "/"(view:"/index")
         "500"(view:'/error')

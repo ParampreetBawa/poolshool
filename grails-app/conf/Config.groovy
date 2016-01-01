@@ -117,3 +117,44 @@ log4j.main = {
 }
 
 grails.app.context = "/"
+
+
+// Added by the Spring Security Core plugin:
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.ps.security.User'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.ps.security.UserRole'
+grails.plugin.springsecurity.authority.className = 'com.ps.security.Role'
+grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+	'/':                ['permitAll'],
+	'/index':           ['permitAll'],
+	'/index.gsp':       ['permitAll'],
+	'/assets/**':       ['permitAll'],
+	'/**/js/**':        ['permitAll'],
+	'/**/css/**':       ['permitAll'],
+	'/**/images/**':    ['permitAll'],
+	'/**/favicon.ico':  ['permitAll']
+]
+
+
+
+// Added by the Spring Security Core plugin:
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.ps.security.User'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.ps.security.UserRole'
+grails.plugin.springsecurity.authority.className = 'com.ps.security.Role'
+grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+	'/':                ['permitAll'],
+	'/index':           ['permitAll'],
+	'/index.gsp':       ['permitAll'],
+	'/assets/**':       ['permitAll'],
+    '/lib/**':       ['permitAll'],
+    '/fonts/**':       ['permitAll'],
+	'/**/js/**':        ['permitAll'],
+	'/**/css/**':       ['permitAll'],
+	'/**/images/**':    ['permitAll'],
+	'/**/favicon.ico':  ['permitAll'],
+     '/html/home.html': ['permitAll']
+]
+
+grails.plugin.springsecurity.useBasicAuth = true
+grails.plugin.springsecurity.basic.realmName = "Ralph's Bait and Tackle"
+
+

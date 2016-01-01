@@ -16,6 +16,11 @@ jQuery(document).ready(function () {
         });
         mainContentView.render();
 
+        var SignUpView = new Conf.SignUpView({
+            el:'#signup-modal'
+        });
+
+
     })(Config);
 });
 

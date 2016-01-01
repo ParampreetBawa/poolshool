@@ -157,3 +157,9 @@ body {
 .stories-heading {
 
 }
+
+label.error {
+    font-size: 10px !important;
+    line-height:13px;
+    color: #ff0000;
+}
