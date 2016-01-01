@@ -151,7 +151,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/css/**':       ['permitAll'],
 	'/**/images/**':    ['permitAll'],
 	'/**/favicon.ico':  ['permitAll'],
-     '/html/home.html': ['permitAll']
+     '/html/**': ['permitAll']
 ]
 
 grails.plugin.springsecurity.useBasicAuth = true
