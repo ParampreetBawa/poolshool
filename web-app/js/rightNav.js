@@ -1,6 +1,7 @@
 jQuery(document).ready(function () {
     (function (Conf) {
         var RightNavView = Conf.MainView.extend({
+            template: _.template($("#right-nav-template").html()),
             model: Conf.MainModel,
             refresh: function () {
                 var arr = Conf.mainModel.get("viewsRefreshStatus")
@@ -9,10 +10,13 @@ jQuery(document).ready(function () {
             events : {
                 'click .car-pool' : 'addCarPool'
             },
+            render: function () {
+                this.$el.find(".right-nav").html(this.template());
+            },
             addCarPool: function (e) {
                 e.preventDefault();
                 var view = this;
-                view.$el.modal('hide');
+                view.$el.find("#carpool-modal").modal('hide');
                 view.showLoadingModal();
                 if(view.isLoggedIn()) {
                     setTimeout(function () {

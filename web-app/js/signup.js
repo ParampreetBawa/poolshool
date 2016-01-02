@@ -8,7 +8,8 @@ jQuery(document).ready(function () {
             events : {
                 'click .signup-form .btn':'register',
                 'click .login-form .btn':'login',
-                'click .login-show-form':'showLoginForm'
+                'click .login-show-form':'showLoginForm',
+                'click .register-show-form':'showRegisterForm'
             },
 
             refresh: function () {
@@ -46,7 +47,12 @@ jQuery(document).ready(function () {
                 e.preventDefault();
                 this.$el.find(".signup-form").hide();
                 this.$el.find(".login-form").show();
+            },
 
+            showRegisterForm: function (e) {
+                e.preventDefault();
+                this.$el.find(".login-form").hide();
+                this.$el.find(".signup-form").show();
             },
 
             login : function (e) {

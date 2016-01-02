@@ -1,45 +1,54 @@
 jQuery(document).ready(function () {
     (function (Conf) {
-        var topNavView = new  Conf.TopNavView({
-            el :'.navbar'
-        });
-        topNavView.render();
+        if(isUserRegistering()) {
+            var registerView = new Conf.RegisterView({
+                el :'body'
+            });
 
-        Conf.views.topNavView = topNavView;
-        var leftNavView = new  Conf.LeftNavView({
-            el :'.left-nav'
-        });
-        leftNavView.render();
+            registerView.render();
+        }else {
+            var topNavView = new Conf.TopNavView({
+                el: '.navbar'
+            });
+            topNavView.render();
 
-        Conf.views.leftNavView = leftNavView;
+            Conf.views.topNavView = topNavView;
+            var leftNavView = new Conf.LeftNavView({
+                el: '.left-nav'
+            });
+            leftNavView.render();
 
-        var mainContentView = new Conf.MainContentView({
-            el:'.main-content'
-        });
-        mainContentView.render();
+            Conf.views.leftNavView = leftNavView;
 
-        Conf.views.mainContentView = mainContentView;
+            var mainContentView = new Conf.MainContentView({
+                el: '.main-content'
+            });
+            mainContentView.render();
 
-
-        var signUpView = new Conf.SignUpView({
-            el:'#signup-modal'
-        });
-
-        Conf.views.signUpView = signUpView;
-
-        var carPoolView = new Conf.CarPoolView({
-            el:'.main-content'
-        });
-        Conf.views.carPoolView = carPoolView;
+            Conf.views.mainContentView = mainContentView;
 
 
-        var rightNavView = new Conf.RightNavView({
-            el:'#carpool-modal'
-        });
+            var signUpView = new Conf.SignUpView({
+                el: '#signup-modal'
+            });
 
-        Conf.views.rightNavView = rightNavView;
+            Conf.views.signUpView = signUpView;
+
+            var carPoolView = new Conf.CarPoolView({
+                el: '.main-content'
+            });
+            Conf.views.carPoolView = carPoolView;
 
 
+            var rightNavView = new Conf.RightNavView({
+                el: 'body'
+            });
+
+            rightNavView.render()
+
+            Conf.views.rightNavView = rightNavView;
+
+        }
 
 
 

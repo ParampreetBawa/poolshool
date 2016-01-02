@@ -19,7 +19,7 @@ environments {
     development {
         dataSource {
             pooled = true
-            logSql = true
+            logSql = false
             driverClassName = "com.mysql.jdbc.Driver"
             dialect = org.hibernate.dialect.MySQL5InnoDBDialect
             dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''

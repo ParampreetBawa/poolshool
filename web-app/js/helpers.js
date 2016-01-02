@@ -67,3 +67,17 @@ var truncate3Digit=function(val){
 
     return strVal
 };
+
+var isUserRegistering = function () {
+    var href = window.location.href;
+    if(href.indexOf("invitationId=") != -1) {
+        return true
+    }
+    return false
+}
+
+var getInvitationId = function () {
+    var href = window.location.href;
+    return href.substr(href.indexOf("=") + 1)
+}
+

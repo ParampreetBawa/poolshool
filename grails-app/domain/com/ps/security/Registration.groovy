@@ -1,6 +1,7 @@
 package com.ps.security
 
 import com.ps.BaseDomain
+import com.ps.EventDTO
 
 /**
  * Created by parampreet on 12/31/15.
@@ -19,5 +20,9 @@ class Registration {
     }
     static mapping = {
         id generator: 'uuid'
+    }
+
+    EventDTO toEventDTO() {
+
     }
 }

@@ -195,3 +195,11 @@ label.error {
     background-color: #8C9F2E;
     color: #ffffff;
 }
+
+.register-box{
+    margin: 10% auto;
+    height: 200px;
+    background-color: #fff;
+    width: 548px;
+    border: 1px solid grey;
+}
