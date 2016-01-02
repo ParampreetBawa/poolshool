@@ -1,8 +1,8 @@
 #map {
-    height: 300px;
-    width: 824px;
+    height: 100%;
+    width: 100%;
 }
-.controls {
+.controls2 {
     margin-top: 10px;
     border: 1px solid transparent;
     border-radius: 2px 0 0 2px;

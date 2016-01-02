@@ -1,13 +1,19 @@
 jQuery(document).ready(function () {
     (function(Conf){
-        var SignUpModel = Backbone.Model.extend({
+        var SignUpModel = Conf.MainModel.extend({
 
         });
-        var SignUpView = Backbone.View.extend({
+        var SignUpView = Conf.MainView.extend({
+            model: SignUpModel,
             events : {
                 'click .signup-form .btn':'register',
                 'click .login-form .btn':'login',
                 'click .login-show-form':'showLoginForm'
+            },
+
+            refresh: function () {
+                var arr = Conf.mainModel.get("viewsRefreshStatus")
+                arr.trigger('change');
             },
             register : function (e) {
                 e.preventDefault();
@@ -23,7 +29,6 @@ jQuery(document).ready(function () {
                     url : Conf.serverUrl + '/user/register',
                     data:{email:email+"@"+domain},
                     success : function (data) {
-                        console.log(data)
                         if(data.code === 0) {
                             view.$el.find(".error").css('display','block');
                             view.$el.find(".error").text(data.msg)
@@ -62,7 +67,7 @@ jQuery(document).ready(function () {
                             view.$el.find(".error").hide();
                             view.$el.find(".error").text('');
                             view.$el.modal('hide');
-                            window.location = window.location;
+                            view.refreshAllViews();
                         }
                     },
                     error:function(data) {

@@ -12,7 +12,7 @@ class UrlMappings {
             action = [POST:"register"]
         }
 
-        "/"(view:"/index")
+        "/"(view:"/html/home.html")
         "500"(view:'/error')
 	}
 }

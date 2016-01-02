@@ -1,19 +1,22 @@
 jQuery(document).ready(function () {
     (function(Conf){
-        var TopNavModel = Backbone.Model.extend({
+        var TopNavModel = Conf.MainModel.extend({
             url: Conf.serverUrl + '/async/topNav',
             defaults : {
-                isLoggedIn:false,
                 deals :0,
                 notifications:0
             }
         });
 
-        var TopNavView = Backbone.View.extend({
+        var TopNavView = Conf.MainView.extend({
             model: TopNavModel,
             template: _.template($("#topnav-template").html()),
             events : {
                 'click .logout': 'logout'
+            },
+
+            refresh: function() {
+                this.fetch();
             },
             render: function () {
                 var view = this;
@@ -40,16 +43,15 @@ jQuery(document).ready(function () {
             },
             logout: function (e) {
                 e.preventDefault();
+                var view = this;
                 $.ajax({
                     type: 'POST',
                     url: Conf.serverUrl + '/logout/index',
                     success: function (data) {
-                        console.log("here")
-                        window.location = window.location.href;
+                        view.refreshAllViews();
                     },
                     error : function (data) {
-                        console.log("here")
-                        window.location = window.location.href;
+                        view.refreshAllViews();
                     }
                 });
             }

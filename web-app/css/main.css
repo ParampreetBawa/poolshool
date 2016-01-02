@@ -179,6 +179,18 @@ label.error {
     width: 100px;
     border-radius: 3px;
 }
+#loading-modal {
+    background-color: #CCCCCC;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    opacity: 0.5;
+}
+.progress {
+    margin: 25% auto;
+    width: 50%;
+}
 .car-pool:hover {
     background-color: #8C9F2E;
     color: #ffffff;

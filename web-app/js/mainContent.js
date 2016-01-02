@@ -1,6 +1,6 @@
 jQuery(document).ready(function () {
     (function(Conf){
-        var MainContentModel = Backbone.Model.extend({
+        var MainContentModel = Conf.MainModel.extend({
             url:Conf.serverUrl + '/async/mainContent',
             parse:function(data){
                 return {feeds: new Feeds(data.feeds)};
@@ -26,7 +26,10 @@ jQuery(document).ready(function () {
             model:Feed
         });
 
-        var MainContentView = Backbone.View.extend({
+        var MainContentView = Conf.MainView.extend({
+            refresh: function () {
+                this.fetch();
+            },
             model: MainContentModel,
             template: _.template($("#main-content-template").html()),
             render: function () {
@@ -36,6 +39,8 @@ jQuery(document).ready(function () {
             renderAfterFetch:function() {
                 var view = this;
                 this.$el.html(view.template({feeds: view.model.get('feeds').models}));
+                var arr = Conf.mainModel.get("viewsRefreshStatus")
+                arr.trigger('change');
             },
             fetch: function () {
                 var view = this;

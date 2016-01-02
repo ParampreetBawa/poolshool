@@ -1,6 +1,6 @@
 jQuery(document).ready(function () {
     (function(Conf){
-        var Feed = Backbone.Model.extend({
+        var Feed = Conf.MainModel.extend({
             defaults : {
                 id:'',
                 heading: ''
@@ -20,17 +20,22 @@ jQuery(document).ready(function () {
             }
         });
 
-        var LeftNavView = Backbone.View.extend({
+        var LeftNavView = Conf.MainView.extend({
             model: LeftNavModel,
             template: _.template($("#sidenav-template").html()),
             render: function () {
                 var view = this;
                 view.fetch();
             },
+            refresh: function () {
+                this.fetch();
+            },
 
             renderAfterFetch:function() {
                 var view = this;
                 this.$el.html(view.template({feeds: view.model.get('feeds').models}));
+                var arr = Conf.mainModel.get("viewsRefreshStatus")
+                arr.trigger('change');
             },
             fetch: function () {
                 var view = this;
