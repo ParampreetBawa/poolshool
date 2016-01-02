@@ -1,7 +1,10 @@
 package com.ps
 
+import com.ps.security.CarPool
 import com.ps.security.Registration
+import com.ps.security.Role
 import com.ps.security.User
+import com.ps.security.UserRole
 import org.springframework.transaction.annotation.Transactional
 
 /**
@@ -9,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional
  */
 class RegistrationService {
     def emailService
+    def springSecurityService
     def register(String email) {
         Registration registration = Registration.findByEmail(email)
         if(registration) {
@@ -35,7 +39,16 @@ class RegistrationService {
         user.firstName = firstName
         user.lastName = lastName
         user.save(flush: true)
-        println(user)
+        Role role = Role.findByAuthority('ROLE_USER')
+        UserRole userRole = new UserRole(user: user,role:role)
+        userRole.save(flush: true)
+
         user
+    }
+
+    def postCarPool(String to, String from, Boolean isCarOwner) {
+        User user = springSecurityService.currentUser as User
+        CarPool carPool = new CarPool(toAddress: to,fromAddress: from,isCarOwner: isCarOwner,user:user).save()
+        carPool
     }
 }

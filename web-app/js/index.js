@@ -132,6 +132,14 @@ jQuery(document).ready(function () {
                view.hideLoadingModal();
            },500)
 
+       },
+       showSuccessDialog: function (msg) {
+           $("#success-modal").find(".user-message").text(msg)
+           $("#success-modal").modal('show');
+       },
+       hideSuccessDialog: function () {
+           $("#success-modal").find(".user-message").text("")
+           $("#success-modal").modal('hide');
        }
    });
 

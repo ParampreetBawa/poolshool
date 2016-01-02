@@ -187,9 +187,16 @@ label.error {
     top: 0;
     opacity: 0.5;
 }
-.progress {
-    margin: 25% auto;
+.update-dialog {
+    margin: 2% auto;
     width: 50%;
+}
+.user-message {
+    height: 100px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100px;
+    color: #000;
 }
 .car-pool:hover {
     background-color: #8C9F2E;

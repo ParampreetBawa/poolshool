@@ -23,6 +23,12 @@ class UrlMappings {
             action = [POST:'create']
         }
 
+        "/carpool/postCarPool" {
+            parse = true
+            controller = 'carPool'
+            action = [POST:'postCarPool']
+        }
+
         "/"(view:"/html/home.html")
         "500"(view:'/error')
 	}
